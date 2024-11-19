@@ -38,7 +38,9 @@ class TipoDatabaseHelper(context: Context) : SQLiteOpenHelper(context, "TiposDB"
         return tipos
     }
 
-    fun deleteTipo(id: Int) {
-        writableDatabase.execSQL("DELETE FROM Tipos WHERE id = ?", arrayOf(id))
+    fun clearAllTipos() {
+        val db = writableDatabase
+        db.execSQL("DELETE FROM Tipos")
+        db.close()
     }
 }

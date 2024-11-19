@@ -37,11 +37,6 @@ class TipoAdapter(private var tipos: List<Tipo>) : RecyclerView.Adapter<TipoAdap
         holder.itemView.setOnLongClickListener {
             val context = holder.itemView.context
             AlertDialog.Builder(context)
-                .setTitle("Remover Dica")
-                .setMessage("Deseja remover a dica: ${tipo.title}?")
-                .setPositiveButton("Sim") { _, _ ->
-                    (context as MainActivity).removeTipo(tipo)
-                }
                 .setNegativeButton("Não", null)
                 .show()
             true
